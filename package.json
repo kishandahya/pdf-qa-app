@@ -1,0 +1,19 @@
+{
+  "name": "pdf-qa-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/multipart": "^8.3.0",
+    "@fastify/static": "^7.0.4",
+    "axios": "^1.7.4",
+    "fastify": "^4.28.1",
+    "pdf-parse": "^1.1.1"
+  }
+}
