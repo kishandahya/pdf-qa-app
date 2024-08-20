@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: pdf-qa-app
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: CLAUDE_API_KEY
+        sync: false

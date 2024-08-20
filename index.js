@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 const PDFParser = require('pdf-parse');
 const axios = require('axios');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 const CLAUDE_API_URL = 'https://api.anthropic.com/v1/messages';
 const CLAUDE_MODEL = 'claude-3-opus-20240229';
 
