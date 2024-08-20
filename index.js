@@ -94,7 +94,7 @@ fastify.get('/', async (request, reply) => {
                 <div id="chatContainer" class="mt-6 h-96 overflow-y-auto border p-4 mb-4"></div>
                 <div class="flex space-x-2">
                     <input type="text" id="questionInput" placeholder="Ask a question" class="flex-grow p-2 border rounded">
-                    <button onclick="askQuestion()" class="bg-green-500 text-white px-4 py-2 rounded">Ask</button>
+                    <button onclick="askQuestion()" id="askButton" class="bg-green-500 text-white px-4 py-2 rounded">Ask</button>
                 </div>
             </div>
         </div>
@@ -159,6 +159,18 @@ fastify.get('/', async (request, reply) => {
                 chatContainer.appendChild(messageDiv);
                 chatContainer.scrollTop = chatContainer.scrollHeight;
             }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const questionInput = document.getElementById('questionInput');
+                const askButton = document.getElementById('askButton');
+
+                questionInput.addEventListener('keypress', function(event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault(); // Prevent default form submission
+                        askButton.click(); // Simulate a click on the Ask button
+                    }
+                });
+            });
         </script>
     </body>
     </html>
