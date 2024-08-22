@@ -1,4 +1,7 @@
-const fastify = require('fastify')({ logger: true });
+const fastify = require('fastify')({ 
+  logger: true,
+  bodyLimit: 100 * 1024 * 1024 // 100 MB limit
+});
 const fs = require('fs').promises;
 const PDFParser = require('pdf-parse');
 const axios = require('axios');
@@ -12,7 +15,11 @@ fastify.register(require('@fastify/static'), {
   prefix: '/public/',
 });
 
-fastify.register(require('@fastify/multipart'));
+fastify.register(require('@fastify/multipart'), {
+  limits: {
+    fieldSize: 100 * 1024 * 1024 // 100 MB limit
+  }
+});
 
 let pdfContexts = {};
 let systemPrompt = '';
